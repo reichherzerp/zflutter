@@ -156,8 +156,9 @@ class ZPositioned extends ZUpdateParentDataWidget<ZParentData> with ZWidget {
       }
     }
 
-    final RenderObject? targetParent = renderObject.parent;
-    if (targetParent is RenderObject) targetParent.markNeedsLayout();
+    final RenderObject? parentRenderObject = renderObject.parent as RenderObject?;
+    parentRenderObject?.markNeedsLayout();
+
   }
 
   @override
